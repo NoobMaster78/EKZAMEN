@@ -24,11 +24,16 @@
 	{
 		if (!empty($attrs)) {
 			$result = '';
-			
+
 			foreach ($attrs as $name => $value) {
 				$result .= " $name=\"$value\"";
+				if ($value === true) {
+					$result .= " $name"; 
+				} else {
+					$result .= " $name=\"$value\""; 
+				}
 			}
-			
+
 			return $result;
 		} else {
 			return '';
@@ -46,8 +51,6 @@
 			unset($this->attrs[$name]);
 			}
 		return $this;
-		}		
-	} 
 		}
 	public function setAttrs($attrs)
 		{
@@ -57,4 +60,4 @@
 		return $this;
 	}
 } 
-?> 
+?>
