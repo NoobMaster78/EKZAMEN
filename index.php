@@ -1,8 +1,23 @@
 <?php
-	require_once 'image.php';
-	$img = (new Image())->setAttrs(['src' => 'img.png', 'width' =>'300', 'height'=>'200']);
-	echo $img->open();
-	require_once 'Link.php';
-	require_once 'menu.php';
-	echo $link1. ' '. $link2.' ' . $link3. ' '. $link4. ' '. $link5."<br>";
-?> 
+	require_once 'HtmlList.php';
+	$list = new HtmlList('ul');
+	require_once 'ClassUL.php';
+	require_once 'ClassOl.php';
+	$ul = new Ul; 
+	$ol = new Ol; 
+
+	echo $ol
+		->addItem((new ListItem())->setText('item1'))
+		->addItem((new ListItem())->setText('item2'))
+		->addItem((new ListItem())->setText('item3'))
+		->show(); 
+
+	echo $list
+	echo '<br>';
+	echo $ul
+		->addItem((new ListItem())->setText('item1'))
+		->addItem((new ListItem())->setText('item2'))
+		->addItem((new ListItem())->setText('item3'))
+		->show();
+		->show(); 
+?>
